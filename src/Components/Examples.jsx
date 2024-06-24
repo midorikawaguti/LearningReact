@@ -4,7 +4,7 @@ import { LEARN_CONCEPTS } from "../data.js";
 import "./Examples.css";
 
 import Counter from "./ex1-Counter/Counter";
-import ToggleText from "./ex2-Toggle/ToggleTex";
+import ChangeVisibility from "./ex2-ChangeVisibility/ChangeVisibility";
 import Form from "./ex3-Form/Form";
 import ToDo from "./ex4-ToDo/ToDo";
 import FetchAPI from "./ex5-FetchAPI/FetchAPI";
@@ -33,7 +33,7 @@ export default function Examples() {
           isSelected={selectedExample === "ex2"}
           onClick={() => handleSelect("ex2")}
         >
-          Toggle Text
+          Change Visibility
         </TabButton>
 
         <TabButton
@@ -61,7 +61,7 @@ export default function Examples() {
           isSelected={selectedExample === "ex6"}
           onClick={() => handleSelect("ex6")}
         >
-          Enable and Disable Editing
+          Enable and Disable
         </TabButton>
       </menu>
 
@@ -71,18 +71,18 @@ export default function Examples() {
         <div id="tab-content">
           <h3>{LEARN_CONCEPTS[selectedExample].title}</h3>
           <ul>
-            {LEARN_CONCEPTS[selectedExample].concepts.map(
+            {LEARN_CONCEPTS[selectedExample].description.map(
               (conceptItem, index) => (
                 <li key={index}>{conceptItem}</li>
               )
             )}
           </ul>
           {selectedExample === "ex1" && <Counter />}
-          {selectedExample === "ex2" && <ToggleText />}
+          {selectedExample === "ex2" && <ChangeVisibility />}
           {selectedExample === "ex3" && <Form />}
           {selectedExample === "ex4" && <ToDo />}
           {selectedExample === "ex5" && <FetchAPI />}
-          {selectedExample === "ex6" && <EnableDisableMethod />}
+          {selectedExample === "ex6" && <EnableDisableMethod name ="Player Name"/>}
 
           <div className="images">
             {LEARN_CONCEPTS[selectedExample].images.map((item, index) => (

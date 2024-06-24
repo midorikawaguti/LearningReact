@@ -1,0 +1,20 @@
+div .text-box{
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    height: 45px;
+    align-items: center;
+    background-color:rgb(168, 160, 180);
+    border-radius: 6px;
+}
+
+button{
+    background-color:rgb(89, 11, 80);
+    color: aliceblue;
+    padding: 5px;
+    border-radius:6px;
+}
+
+input .edit{
+    border-color: none;
+}

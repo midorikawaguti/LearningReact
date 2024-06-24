@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./ToggleText.css";
+import "./ChangeVisibility.css";
 
-function ToggleText() {
+function ChangeVisibility() {
   const [isVisible, setIsVisible] = useState(true);
 
-  const toggleVisibility = () => {
-    setIsVisible(!isVisible);
+  function toggleVisibility() {
+    setIsVisible((visible) =>!isVisible);
   };
 
   return (
@@ -20,4 +20,4 @@ function ToggleText() {
   );
 }
 
-export default ToggleText;
+export default ChangeVisibility;
