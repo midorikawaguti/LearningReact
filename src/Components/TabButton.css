@@ -1,0 +1,28 @@
+/*TAB BUTTON*/
+
+#tab-button {
+  background-color: #36254a;
+  height: 30px;
+  width: 160px;
+  border-radius: 6px;
+  margin: 5px;
+  color: #ebe7ef;
+  cursor: pointer;
+  border: none;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#tab-button:hover {
+  background-color: #4a3769;
+}
+
+#tab-button.active {
+  background-color: #ab6e9d;
+  color: #ebe7ef;
+}
+
+#ul-tab-button{
+  list-style-type: none;
+}

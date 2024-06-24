@@ -1,0 +1,26 @@
+.counter {
+  color: rgb(0, 0, 0);
+  padding: 2rem;
+  border-radius: 6px;
+  background-color: #bdb1bc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+.counter button {
+  background-color: #36254a;
+  height: 30px;
+  width: 160px;
+  border-radius: 6px;
+  margin: 5px;
+  color: #ebe7ef;
+  cursor: pointer;
+  border: none;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.counter button:hover {
+  background-color: #4a3769;
+}
