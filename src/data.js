@@ -2,6 +2,7 @@ import EnableDisable from "./assets/EnableDisable.jpg"
 import SimpleCounter from "./assets/SimpleCounter.jpg";
 import ToggleText from "./assets/ToggleText.jpg";
 import CreateOperation from "./assets/CRUD-Create.jpg";
+import DeleteOperation from "./assets/CRUD-Delete.jpg";
 
 export const LEARN_CONCEPTS = {
   ex1: {
@@ -74,6 +75,15 @@ export const LEARN_CONCEPTS = {
       "Use useState hook to manage the new items added to the list and the input field.",
     ],
     images: [CreateOperation],
-    concepts:["useState"]
+    concepts:["useState", "spread operator '...'"]
+  },
+
+     ex8: {
+    title: "CRUD - Delete Operation",
+    description: [
+      "Use useState hook to manage deleted items.",
+    ],
+    images: [DeleteOperation],
+    concepts:["useState", "filter method"]
   },
 };
