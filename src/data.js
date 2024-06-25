@@ -1,6 +1,7 @@
 import EnableDisable from "./assets/EnableDisable.jpg"
 import SimpleCounter from "./assets/SimpleCounter.jpg";
 import ToggleText from "./assets/ToggleText.jpg";
+import CreateOperation from "./assets/CRUD-Create.jpg";
 
 export const LEARN_CONCEPTS = {
   ex1: {
@@ -64,6 +65,15 @@ export const LEARN_CONCEPTS = {
       "Change isEditing to true in that function.",
     ],
     images: [EnableDisable],
+    concepts:["useState"]
+  },
+
+   ex7: {
+    title: "CRUD - Create Operation",
+    description: [
+      "Use useState hook to manage the new items added to the list and the input field.",
+    ],
+    images: [CreateOperation],
     concepts:["useState"]
   },
 };
