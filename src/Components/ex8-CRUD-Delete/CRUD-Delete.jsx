@@ -11,16 +11,14 @@ function DeleteOperation(){
 
     return(
     <div>
-        <span>
-            <ul>
-                {items.map((element, index)=>(
-                    <li key={index}>
-                        <div className='list'>{element}</div>
-                        <button onClick={()=>deleteSelectedItem(index)}>Delete</button>
-                    </li>
-                ))}
-            </ul>
-        </span>
+        <ul>
+            {items.map((element, index)=>(
+                <li key={index}>
+                    <div className='list'>{element}</div>
+                    <button onClick={()=>deleteSelectedItem(index)}>Delete</button>
+                </li>
+            ))}
+        </ul>
     </div>
 )
 }

@@ -11,6 +11,7 @@ import FetchAPI from "./ex5-FetchAPI/FetchAPI";
 import EnableDisableMethod from "./ex6-EnableDisableMethod/EnableDisableMethod.jsx";
 import CRUDCreate from "./ex7-CRUD-Create/CRUD-Create.jsx";
 import CRUDDelete from "./ex8-CRUD-Delete/CRUD-Delete.jsx"
+import CRUDEdit from "./ex9-CRUD-Edit/CRUD-Edit.jsx";
 
 export default function Examples() {
   const [selectedExample, setSelectedTopic] = useState("");
@@ -79,6 +80,13 @@ export default function Examples() {
         >
           CRUD - Delete
         </TabButton>
+
+        <TabButton
+          isSelected={selectedExample === "ex9"}
+          onClick={() => handleSelect("ex9")}
+        >
+          CRUD - Edit
+        </TabButton>
       </menu>
 
       {!selectedExample ? (
@@ -101,6 +109,7 @@ export default function Examples() {
           {selectedExample === "ex6" && <EnableDisableMethod name ="Player Name"/>}
           {selectedExample === "ex7" && <CRUDCreate/>}
           {selectedExample === "ex8" && <CRUDDelete/>}
+          {selectedExample === "ex9" && <CRUDEdit/>}
           <div className="images">
             {LEARN_CONCEPTS[selectedExample].images.map((item, index) => (
               <img

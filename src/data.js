@@ -3,6 +3,8 @@ import SimpleCounter from "./assets/SimpleCounter.jpg";
 import ToggleText from "./assets/ToggleText.jpg";
 import CreateOperation from "./assets/CRUD-Create.jpg";
 import DeleteOperation from "./assets/CRUD-Delete.jpg";
+import EditOperation1 from "./assets/CRUD-Edit1.jpg";
+import EditOperation2 from "./assets/CRUD-Edit2.jpg";
 
 export const LEARN_CONCEPTS = {
   ex1: {
@@ -85,5 +87,13 @@ export const LEARN_CONCEPTS = {
     ],
     images: [DeleteOperation],
     concepts:["useState", "filter method"]
+  },
+     ex9: {
+    title: "CRUD - Edit Operation",
+    description: [
+      "Use useState hook to manage edited items.",
+    ],
+    images: [EditOperation1, EditOperation2],
+    concepts:["useState"]
   },
 };
