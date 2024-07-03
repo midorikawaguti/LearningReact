@@ -12,6 +12,7 @@ import EnableDisableMethod from "./ex6-EnableDisableMethod/EnableDisableMethod.j
 import CRUDCreate from "./ex7-CRUD-Create/CRUD-Create.jsx";
 import CRUDDelete from "./ex8-CRUD-Delete/CRUD-Delete.jsx"
 import CRUDEdit from "./ex9-CRUD-Edit/CRUD-Edit.jsx";
+import TemperatureConverter from "./ex10-temperatureConverter/TemperatureConverter.jsx";
 
 export default function Examples() {
   const [selectedExample, setSelectedTopic] = useState("");
@@ -87,6 +88,13 @@ export default function Examples() {
         >
           CRUD - Edit
         </TabButton>
+
+         <TabButton
+          isSelected={selectedExample === "ex10"}
+          onClick={() => handleSelect("ex10")}
+        >
+          Temperature Converter
+        </TabButton>
       </menu>
 
       {!selectedExample ? (
@@ -110,6 +118,7 @@ export default function Examples() {
           {selectedExample === "ex7" && <CRUDCreate/>}
           {selectedExample === "ex8" && <CRUDDelete/>}
           {selectedExample === "ex9" && <CRUDEdit/>}
+          {selectedExample === "ex10" && <TemperatureConverter/>}
           <div className="images">
             {LEARN_CONCEPTS[selectedExample].images.map((item, index) => (
               <img

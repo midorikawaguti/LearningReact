@@ -5,6 +5,9 @@ import CreateOperation from "./assets/CRUD-Create.jpg";
 import DeleteOperation from "./assets/CRUD-Delete.jpg";
 import EditOperation1 from "./assets/CRUD-Edit1.jpg";
 import EditOperation2 from "./assets/CRUD-Edit2.jpg";
+import TemperatureConverter1 from "./assets/TemperatureConverter1.jpg";
+import TemperatureConverter2 from "./assets/TemperatureConverter2.jpg";
+import TemperatureConverter3 from "./assets/TemperatureConverter3.jpg";
 
 export const LEARN_CONCEPTS = {
   ex1: {
@@ -96,4 +99,12 @@ export const LEARN_CONCEPTS = {
     images: [EditOperation1, EditOperation2],
     concepts:["useState"]
   },
+      ex10: {
+    title: "Temperature Conveter",
+    description: [
+      "By lifting the state up to the parent component, both child components can share and synchronize their state through props, allowing the application to keep the temperature values in sync between Celsius and Fahrenheit.",
+    ],
+    images: [TemperatureConverter1, TemperatureConverter2, TemperatureConverter3],
+    concepts:["useState"]
+  }
 };
