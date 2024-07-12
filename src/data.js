@@ -8,6 +8,7 @@ import EditOperation2 from "./assets/CRUD-Edit2.jpg";
 import TemperatureConverter1 from "./assets/TemperatureConverter1.jpg";
 import TemperatureConverter2 from "./assets/TemperatureConverter2.jpg";
 import TemperatureConverter3 from "./assets/TemperatureConverter3.jpg";
+import Accordion from "./assets/Accordion.jpg";
 
 export const LEARN_CONCEPTS = {
   ex1: {
@@ -106,5 +107,14 @@ export const LEARN_CONCEPTS = {
     ],
     images: [TemperatureConverter1, TemperatureConverter2, TemperatureConverter3],
     concepts:["useState"]
+  },
+
+    ex12: {
+  title: "Accordion",
+  description: [
+      "React Project Tutorial - freeCodeCamp",
+    ],
+    images: [Accordion],
+    concepts:["useState", "Logical AND (&&) Operator", "Array Methods: map/ join"]
   }
 };

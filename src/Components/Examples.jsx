@@ -13,6 +13,7 @@ import CRUDCreate from "./ex7-CRUD-Create/CRUD-Create.jsx";
 import CRUDDelete from "./ex8-CRUD-Delete/CRUD-Delete.jsx"
 import CRUDEdit from "./ex9-CRUD-Edit/CRUD-Edit.jsx";
 import TemperatureConverter from "./ex10-temperatureConverter/TemperatureConverter.jsx";
+import Accordion from "./ex12-Accordion/Accordion.jsx"
 
 export default function Examples() {
   const [selectedExample, setSelectedTopic] = useState("");
@@ -95,6 +96,13 @@ export default function Examples() {
         >
           Temperature Converter
         </TabButton>
+
+        <TabButton
+          isSelected={selectedExample === "ex12"}
+          onClick={() => handleSelect("ex12")}
+        >
+          Accordion
+        </TabButton>
       </menu>
 
       {!selectedExample ? (
@@ -119,12 +127,13 @@ export default function Examples() {
           {selectedExample === "ex8" && <CRUDDelete/>}
           {selectedExample === "ex9" && <CRUDEdit/>}
           {selectedExample === "ex10" && <TemperatureConverter/>}
+          {selectedExample === "ex12" && <Accordion/>}
           <div className="images">
             {LEARN_CONCEPTS[selectedExample].images.map((item, index) => (
               <img
                 key={index}
                 src={item}
-                alt={`Example ${selectedExample} Image ${index + 1}`}
+                alt={`Example ${selectedExample} ${index + 1}`}
               />
             ))}
           </div>
