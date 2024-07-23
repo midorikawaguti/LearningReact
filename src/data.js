@@ -9,6 +9,9 @@ import TemperatureConverter1 from "./assets/TemperatureConverter1.jpg";
 import TemperatureConverter2 from "./assets/TemperatureConverter2.jpg";
 import TemperatureConverter3 from "./assets/TemperatureConverter3.jpg";
 import Accordion from "./assets/Accordion.jpg";
+import SimpleDrawing1 from "./assets/SimpleDrawing1.jpg";
+import SimpleDrawing2 from "./assets/SimpleDrawing2.jpg";
+import SimpleDrawing3 from "./assets/SimpleDrawing3.jpg";
 
 export const LEARN_CONCEPTS = {
   ex1: {
@@ -106,6 +109,14 @@ export const LEARN_CONCEPTS = {
       "By lifting the state up to the parent component, both child components can share and synchronize their state through props, allowing the application to keep the temperature values in sync between Celsius and Fahrenheit.",
     ],
     images: [TemperatureConverter1, TemperatureConverter2, TemperatureConverter3],
+    concepts:["useState"]
+  },
+   ex11: {
+    title: "Grid Based drawing",
+    description: [
+      "Each cell in the grid can be toggled between two states - filled or empty.",
+    ],
+    images: [SimpleDrawing1, SimpleDrawing2, SimpleDrawing3],
     concepts:["useState"]
   },
 
