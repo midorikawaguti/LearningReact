@@ -1,13 +1,16 @@
 
-export const questions = [
-{
+export const QUESTIONS = [
+ {
     question: "What is the capital of France?",
     options: ["Paris", "London", "Berlin", "Madrid"],
-    answer: "Paris"
+    answer: "Paris",
   },
   {
     question: "What is 2 + 2?",
     options: ["3", "4", "5", "6"],
     answer: "4"
   },
+  {
+
+  }
 ]

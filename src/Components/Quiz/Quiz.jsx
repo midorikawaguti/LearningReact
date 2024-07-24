@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Quiz.css';
-import { questions } from '../../data-quiz';
+import { QUESTIONS } from '../../data-quiz';
 
 
 function Quiz() {
@@ -14,10 +14,10 @@ function Quiz() {
   };
 
   const handleSubmit = () => {
-    if (selectedOption === questions[currentQuestionIndex].answer) {
+    if (selectedOption === QUESTIONS[currentQuestionIndex].answer) {
       setScore(score + 1);
     }
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < QUESTIONS.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedOption(null);
     } else {
@@ -29,8 +29,8 @@ function Quiz() {
     <div className="quiz">
       {!quizCompleted ? (
         <div>
-          <h2>{questions[currentQuestionIndex].question}</h2>
-          {questions[currentQuestionIndex].options.map((option, index) => (
+          <h2>{QUESTIONS[currentQuestionIndex].question}</h2>
+          {QUESTIONS[currentQuestionIndex].options.map((option, index) => (
             <div key={index}>
               <input
                 type="radio"
@@ -48,7 +48,7 @@ function Quiz() {
       ) : (
         <div>
           <h2>Quiz Completed!</h2>
-          <p>Your Score: {score} / {questions.length}</p>
+          <p>Your Score: {score} / {QUESTIONS.length}</p>
         </div>
       )}
     </div>

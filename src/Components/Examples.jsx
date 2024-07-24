@@ -140,12 +140,12 @@ export default function Examples() {
           
           {selectedExample === "ex12" && <Accordion/>}
 
-          {LEARN_CONCEPTS[selectedExample]?.codeSnippet && (
-            <CodeDisplay code={LEARN_CONCEPTS[selectedExample].codeSnippet[0]} />
-          )}
+           {LEARN_CONCEPTS[selectedExample]?.codeSnippet.map((snippet, index) => (
+            <CodeDisplay key={index} code={snippet} />
+          ))}
 
           <div className="images">
-            {LEARN_CONCEPTS[selectedExample].images.map((item, index) => (
+            {LEARN_CONCEPTS[selectedExample]?.images.map((item, index) => (
               <img
                 key={index}
                 src={item}
