@@ -1,0 +1,17 @@
+.quiz {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quiz h2 {
+  font-size: 1.5em;
+}
+
+.quiz div {
+  margin-bottom: 10px;
+}
+
+.quiz button {
+  margin-top: 20px;
+}
