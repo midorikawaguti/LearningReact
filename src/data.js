@@ -587,7 +587,18 @@ export const LEARN_CONCEPTS = {
           </tbody>
         </table>
       );
-    }`]
+    }`,
+    `.grid {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: white; /* Default color */
+  }
+
+  .grid.active {
+      background-color: rgb(45, 121, 118); /* Color for active cells */
+  }`]
   },
 
     ex12: {

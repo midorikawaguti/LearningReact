@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Quiz.css';
 import { QUESTIONS } from '../../data-quiz';
 import CodeDisplay from '../CodeDisplay/CodeDisplay';
+import TabButton from '../TabButton';
 
 function Quiz() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -30,11 +31,43 @@ function Quiz() {
     }
   };
 
+    const handleQuestionSelect = (index) => {
+    setCurrentQuestionIndex(index);
+    setSelectedOptionIndex(null);
+    setQuizCompleted(false);
+  };
+
   return (
     <div className="quiz">
+       <menu className='quiz-menu'>
+        {QUESTIONS.map((_, index) => (
+          <TabButton
+            style={{
+              width: '30px',
+              height: '30px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '1em',
+              border: '1px solid #ccc',
+              borderRadius: '5px',
+              color: '#6ea8ab',
+              backgroundColor: '#f0f0f0',
+              cursor: 'pointer',
+              textAlign: 'center',
+            }}
+            key={index}
+            isSelected={currentQuestionIndex === index}
+            onClick={() => handleQuestionSelect(index)}
+            className='{}'
+          >
+            {index + 1}
+          </TabButton>
+        ))}
+      </menu>
       {!quizCompleted ? (
-        <div>
-          <h2>QUESTION {currentQuestionIndex+11}</h2>
+        <div className='question-box'>
+          <h2>QUESTION {currentQuestionIndex+1}</h2>
           <h2>{QUESTIONS[currentQuestionIndex].question}</h2>
           {QUESTIONS[currentQuestionIndex]?.questionCode && (
             <CodeDisplay code={QUESTIONS[currentQuestionIndex].questionCode} />

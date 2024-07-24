@@ -2,9 +2,12 @@ import "./TabButton.css";
 
 export default function TabButton({ children, isSelected, ...props }) {
   return (
-    <ul id="ul-tab-button">
+    <ul className="ul-tab-button">
         <li>
-        <button  id = "tab-button" className={isSelected ? "active" : ""} {...props}>
+        <button
+          className={`tab-button ${isSelected ? 'active' : ''}`}
+          {...props}
+        >
           {children}
         </button>
       </li>

@@ -1,6 +1,6 @@
-/*TAB BUTTON*/
+/* TabButton.css */
 
-#tab-button {
+.tab-button {
   background-color: #137580;
   height: 50px;
   width: 160px;
@@ -14,15 +14,31 @@
   transition: background-color 0.3s ease;
 }
 
-#tab-button:hover {
+.tab-button:hover {
   background-color: #375769;
 }
 
-#tab-button.active {
+.tab-button.active {
   background-color: #6ea8ab;
   color: #ebe7ef;
 }
 
-#ul-tab-button{
+.ul-tab-button {
   list-style-type: none;
+}
+
+/* Quiz.css */
+
+.quiz-menu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 8px;
+  max-width: 200px;
+  max-height: 800px;
+  position: relative;
+}
+
+.question-box {
+  width: 1200px;
 }

@@ -1,7 +1,11 @@
+/* Quiz.css */
+
 .quiz {
-  padding: 20px;
-  max-width: 600px;
+  padding: 10px;
+  max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  gap: 50px;
 }
 
 .quiz h2 {
@@ -15,3 +19,21 @@
 .quiz button {
   margin-top: 20px;
 }
+
+.question-box{
+width: 1200px;
+
+}
+
+.quiz-menu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 8px;
+  max-width: 200px;
+  max-height:800px;
+  position: relative;
+}
+
+
+
