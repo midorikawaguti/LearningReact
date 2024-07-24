@@ -1,6 +1,7 @@
 import TabButton from "./TabButton";
 import { useState } from "react";
 import { LEARN_CONCEPTS } from "../data.js";
+import CodeDisplay from "./CodeDisplay/CodeDisplay.jsx";
 import "./Examples.css";
 
 import Counter from "./ex1-Counter/Counter";
@@ -138,6 +139,11 @@ export default function Examples() {
           {selectedExample === "ex11" && <SimpleDrawing/>}
           
           {selectedExample === "ex12" && <Accordion/>}
+
+          {LEARN_CONCEPTS[selectedExample]?.codeSnippet && (
+            <CodeDisplay code={LEARN_CONCEPTS[selectedExample].codeSnippet[0]} />
+          )}
+
           <div className="images">
             {LEARN_CONCEPTS[selectedExample].images.map((item, index) => (
               <img
