@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
 import './Quiz.css';
 import { QUESTIONS } from '../../data-quiz';
-
+import CodeDisplay from '../CodeDisplay/CodeDisplay';
 
 function Quiz() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
   const [quizCompleted, setQuizCompleted] = useState(false);
 
-  const handleOptionChange = (e) => {
-    setSelectedOption(e.target.value);
+  const handleOptionChange = (index) => {
+    setSelectedOptionIndex(index);
   };
 
   const handleSubmit = () => {
-    if (selectedOption === QUESTIONS[currentQuestionIndex].answer) {
+    const correctAnswerIndex = QUESTIONS[currentQuestionIndex].answer;
+
+    if (selectedOptionIndex === correctAnswerIndex) {
       setScore(score + 1);
+      console.log("selected:",selectedOptionIndex);
+      console.log("correct answer",correctAnswerIndex);
     }
+
     if (currentQuestionIndex < QUESTIONS.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedOption(null);
+      setSelectedOptionIndex(null);
     } else {
       setQuizCompleted(true);
     }
@@ -29,18 +34,22 @@ function Quiz() {
     <div className="quiz">
       {!quizCompleted ? (
         <div>
+          <h2>QUESTION {currentQuestionIndex+11}</h2>
           <h2>{QUESTIONS[currentQuestionIndex].question}</h2>
+          {QUESTIONS[currentQuestionIndex]?.questionCode && (
+            <CodeDisplay code={QUESTIONS[currentQuestionIndex].questionCode} />
+            )}
+
           {QUESTIONS[currentQuestionIndex].options.map((option, index) => (
             <div key={index}>
               <input
                 type="radio"
-                id={option}
+                id={`option${index}`}
                 name="option"
-                value={option}
-                checked={selectedOption === option}
-                onChange={handleOptionChange}
+                checked={selectedOptionIndex === index}
+                onChange={() => handleOptionChange(index)}
               />
-              <label htmlFor={option}>{option}</label>
+              <label htmlFor={`option${index}`}>{option}</label>
             </div>
           ))}
           <button onClick={handleSubmit}>Next</button>

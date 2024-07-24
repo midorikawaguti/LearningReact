@@ -137,7 +137,6 @@ export default function Examples() {
           {selectedExample === "ex9" && <CRUDEdit/>}
           {selectedExample === "ex10" && <TemperatureConverter/>}
           {selectedExample === "ex11" && <SimpleDrawing/>}
-          
           {selectedExample === "ex12" && <Accordion/>}
 
            {LEARN_CONCEPTS[selectedExample]?.codeSnippet.map((snippet, index) => (
