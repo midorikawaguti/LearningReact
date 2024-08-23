@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Quiz.css';
 import CodeDisplay from '../CodeDisplay/CodeDisplay';
 import { QUESTIONS } from '../../data-quiz';
@@ -7,9 +7,18 @@ import Score from './Score';
 function Question({ currentQuestionIndex, setCurrentQuestionIndex }) {
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
   const [quizCompleted, setQuizCompleted] = useState(false);
-
   const [answers, setAnswers] = useState(Array(QUESTIONS.length).fill(null));
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
+
+  useEffect(() => {
+    setSelectedOptionIndex(answers[currentQuestionIndex]);
+    // Check if the current answer is correct when the question changes
+    if (answers[currentQuestionIndex] !== null) {
+      setIsCorrectAnswer(answers[currentQuestionIndex] === QUESTIONS[currentQuestionIndex].answer);
+    } else {
+      setIsCorrectAnswer(false);
+    }
+  }, [currentQuestionIndex, answers]);
 
   const handleOptionChange = (index) => {
     setSelectedOptionIndex(index);
@@ -19,28 +28,21 @@ function Question({ currentQuestionIndex, setCurrentQuestionIndex }) {
   };
 
   const handleSubmit = () => {
-    if (currentQuestionIndex < QUESTIONS.length - 1) {
-      setSelectedOptionIndex(answers[currentQuestionIndex + 1] || null);
-  };
-
-    if(QUESTIONS[currentQuestionIndex].answer === selectedOptionIndex){
-        setIsCorrectAnswer(true);
-        console.log("CORRECT ANSWER");
+    if (QUESTIONS[currentQuestionIndex].answer === selectedOptionIndex) {
+      setIsCorrectAnswer(true);
+      console.log("CORRECT ANSWER");
     } else {
       setIsCorrectAnswer(false);
     }
-  }
+  };
+
   const handleNextQuestion = () => {
     if (currentQuestionIndex < QUESTIONS.length - 1) {
-       setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       setQuizCompleted(true);
     }
-
-    setIsCorrectAnswer(false);
   };
-  
-
 
   return (
     <>
@@ -66,7 +68,7 @@ function Question({ currentQuestionIndex, setCurrentQuestionIndex }) {
           ))}
           <Score onSubmit={handleSubmit} onNextQuestion={handleNextQuestion} answers={answers} />
           <div>
-            {isCorrectAnswer && <p> Coreect Answer </p>} 
+            {isCorrectAnswer && <p>Correct Answer</p>}
           </div>
         </div>
       ) : (
