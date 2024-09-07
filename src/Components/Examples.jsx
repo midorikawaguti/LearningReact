@@ -16,6 +16,7 @@ import CRUDEdit from "./ex9-CRUD-Edit/CRUD-Edit.jsx";
 import TemperatureConverter from "./ex10-temperatureConverter/TemperatureConverter.jsx";
 import Accordion from "./ex12-Accordion/Accordion.jsx";
 import SimpleDrawing from "./ex11-simpleDrawingGrid/SimpleDrawing.jsx";
+import Timer from "./ex13-Timer/Timer.jsx";
 
 export default function Examples() {
   const [selectedExample, setSelectedTopic] = useState("");
@@ -112,6 +113,13 @@ export default function Examples() {
         >
           Accordion
         </TabButton>
+
+        <TabButton
+          isSelected={selectedExample === "ex13"}
+          onClick={() => handleSelect("ex13")}
+        >
+          Timer
+        </TabButton>
       </menu>
 
       {!selectedExample ? (
@@ -138,6 +146,7 @@ export default function Examples() {
           {selectedExample === "ex10" && <TemperatureConverter/>}
           {selectedExample === "ex11" && <SimpleDrawing/>}
           {selectedExample === "ex12" && <Accordion/>}
+          {selectedExample === "ex13" && <Timer/>}
 
            {LEARN_CONCEPTS[selectedExample]?.codeSnippet.map((snippet, index) => (
             <CodeDisplay key={index} code={snippet} />
